@@ -12,13 +12,14 @@
     "test": "jest ./test",
     "lint": "eslint src/**/*.{js,jsx} --fix",
     "dev": "cross-env NODE_ENV=development webpack-serve",
-    "start": "npm start",
+    "start": "npm run dev",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy": "./deploy.sh devops@58.211.16.78 && ./deploy.sh devops@119.9.106.225",
     "deploy:avc": "cross-env AGORA_PROFILE=avc NODE_ENV=production webpack --progress --hide-modules && cross-env AGORA_DEPLOY_PATH=live npm run deploy",
     "deploy:al": "cross-env AGORA_PROFILE=al NODE_ENV=production webpack --progress --hide-modules && cross-env AGORA_DEPLOY_PATH=agoralive npm run deploy",
     "deploy:all": "npm run deploy:avc && npm run deploy:al",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "heroku-postbuild": "npm rebuild node-sass"
   },
   "husky": {
     "hooks": {
