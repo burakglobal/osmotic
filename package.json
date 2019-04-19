@@ -19,7 +19,7 @@
     "deploy:al": "cross-env AGORA_PROFILE=al NODE_ENV=production webpack --progress --hide-modules && cross-env AGORA_DEPLOY_PATH=agoralive npm run deploy",
     "deploy:all": "npm run deploy:avc && npm run deploy:al",
     "precommit": "lint-staged",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run dev"
   },
   "husky": {
     "hooks": {
